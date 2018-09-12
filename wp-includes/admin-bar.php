@@ -320,12 +320,18 @@ function wp_admin_bar_site_menu( $wp_admin_bar ) {
 	}
 
 	$title = wp_html_excerpt( $blogname, 40, '&hellip;' );
-
+	
 	$wp_admin_bar->add_menu( array(
 		'id'    => 'site-name',
 		'title' => $title,
 		'href'  => ( is_admin() || ! current_user_can( 'read' ) ) ? home_url( '/' ) : admin_url(),
 	) );
+
+	$wp_admin_bar->add_menu([
+		'id' => 'crm-by-alaa',
+		'title' => 'CRM BY Alaa',
+		'href' => admin_url('/'),
+	]);
 
 	// Create submenu items.
 
